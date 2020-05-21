@@ -27,5 +27,11 @@
     "url": "https://github.com/jcw2865/employee-management-system/issues"
   },
   "homepage": "https://github.com/jcw2865/employee-management-system#readme",
+
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "sequelize": "^5.21.10"
+  },
   "proxy": "http://localhost:3001"
 }
