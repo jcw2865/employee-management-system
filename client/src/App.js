@@ -1,16 +1,21 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
-import { Router, Route, Switch } from 'react-router-dom';
+import MiscPage from './pages/MiscPage';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Employee Management System coming soon!
-        </p>
-      </header>
+      <Router>
+        {/* <header className="App-header"></header> */}
+        <div>
+          {/* <Switch> */}
+          <Route path="/" exact component={LandingPage} />
+          <Route exact path="/misc" component={MiscPage} />
+          {/* </Switch> */}
+        </div>
+      </Router>
     </div>
   );
 }
