@@ -1,16 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
+import MiscPage from './pages/MiscPage';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Employee Management System coming soon!
-        </p>
-      </header>
+      <Router>
+        {/* <header className="App-header"></header> */}
+        <div>
+          {/* <Switch> */}
+          <Route path="/" exact component={LandingPage} />
+          <Route exact path="/misc" component={MiscPage} />
+          {/* </Switch> */}
+        </div>
+      </Router>
     </div>
   );
 }
