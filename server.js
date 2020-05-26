@@ -1,5 +1,6 @@
 const express = require("express");
 const { join } = require("path");
+const path = require("path");
 const morgan = require("morgan");
 const app = express();
 const sequelize = require("sequelize");
@@ -33,6 +34,7 @@ app.use(morgan("dev"));
 // Define any API routes before this runs
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  // res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
 
 //Start the API server
