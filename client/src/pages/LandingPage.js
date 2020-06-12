@@ -8,10 +8,12 @@ const LandingPage = (props) => {
             <Table hover>
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>ID</th>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>Username</th>
+                        <th>Department</th>
+                        <th>Position</th>
+                        <th>Supervisor?</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,18 +22,24 @@ const LandingPage = (props) => {
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>@mdo</td>
+                        <td>asdf</td>
+                        <td>asdf</td>
                     </tr>
                     <tr>
                         <th scope="row">2</th>
                         <td>Jacob</td>
                         <td>Thornton</td>
                         <td>@fat</td>
+                        <td>asdf</td>
+                        <td>asdf</td>
                     </tr>
                     <tr>
                         <th scope="row">3</th>
                         <td>Larry</td>
                         <td>the Bird</td>
                         <td>@twitter</td>
+                        <td>asdf</td>
+                        <td>asdf</td>
                     </tr>
                 </tbody>
             </Table>

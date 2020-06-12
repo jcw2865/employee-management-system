@@ -11,7 +11,7 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem,
-    NavbarText
+    // NavbarText
 } from 'reactstrap';
 
 const NavbarComp = (props) => {
@@ -22,35 +22,35 @@ const NavbarComp = (props) => {
     return (
         <div>
             <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">reactstrap</NavbarBrand>
+                <NavbarBrand href="/">Employee Management System</NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
-                        <NavItem>
-                            <NavLink href="/components/">Components</NavLink>
-                        </NavItem>
-                        <NavItem>
+                        {/* <NavItem>
                             <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-                        </NavItem>
+                        </NavItem> */}
                         <UncontrolledDropdown nav inNavbar>
                             <DropdownToggle nav caret>
-                                Options
+                                Departments
                             </DropdownToggle>
                             <DropdownMenu right>
-                                <DropdownItem>
-                                    Option 1
+                                <DropdownItem href="/">
+                                    All Departments
                                 </DropdownItem>
-                                <DropdownItem>
-                                    Option 2
+                                <DropdownItem href="/misc">
+                                    Department 1
                                 </DropdownItem>
-                                <DropdownItem divider />
+                                {/* <DropdownItem divider /> */}
                                 <DropdownItem>
-                                    Reset
+                                    Department 2
                                 </DropdownItem>
                             </DropdownMenu>
                         </UncontrolledDropdown>
+                        <NavItem>
+                            <NavLink href="/">Search</NavLink>
+                        </NavItem>
                     </Nav>
-                    <NavbarText>Simple Text</NavbarText>
+                    {/* <NavbarText>Simple Text</NavbarText> */}
                 </Collapse>
             </Navbar>
         </div>
