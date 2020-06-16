@@ -2,20 +2,41 @@ const express = require("express");
 const { join } = require("path");
 const morgan = require("morgan");
 const app = express();
-const sequelize = require("sequelize");
-// const routes = require("./routes")
+const mysql = require("mysql");
+// const sequelize = require("sequelize");
+const routes = require("./routes")
 // const db = require("./models")
 
 const PORT = process.env.PORT || 3001;
 
-//If server doesn't work uncomment out line 19 and ocmment out 21-23
-// Connect to the Mongo DB
-// mongoose.connect(
-//   process.env.MONGODB_URI || "mongodb://localhost/reactbooks")
-//   .then(() => console.log("Database is connected"))
-//   .catch(err => console.log(err));
-// app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
+// |||||||||||||||||||||||||
+// Begin MySQL Connection
+// |||||||||||||||||||||||||
+// Necessary connection info
+const connection = mysql.createConnection({
+  host: "localhost",
+  port: 3306,
+  user: "test_user",
+  password: "password",
+  database: "employee_management_db"
+});
 
+// Calling the function to create the MySQL connection.
+connection.connect(function (err) {
+  if (err) throw (err);
+  console.log("Connected to MySQL as ID " + connection.threadId);
+  // afterConnection();
+});
+
+// Creating the function to end the MySQL connection.
+function afterConnection() {
+  connection.end();
+  if (err) throw (err);
+}
+
+// |||||||||||||||||||||||||
+// Middleware
+// |||||||||||||||||||||||||
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -28,7 +49,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(morgan("dev"));
 
 // Add routes, both API and view
-// app.use("/api", routes);
+app.use("/api", routes);
 
 // Define any API routes before this runs
 app.get("*", (req, res) => {
