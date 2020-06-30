@@ -30,7 +30,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "express": "^4.17.1",
-    "express-jwt": "^5.3.3",
+    "express-jwt": "^6.0.0",
     "if-env": "^1.0.4",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
