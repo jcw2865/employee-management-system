@@ -29,7 +29,7 @@
   "homepage": "https://github.com/jcw2865/employee-management-system#readme",
   "dependencies": {
     "axios": "^0.19.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-jwt": "^5.3.3",
     "if-env": "^1.0.4",
     "morgan": "^1.10.0",
